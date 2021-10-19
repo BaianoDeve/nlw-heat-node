@@ -2,6 +2,7 @@ import { Request, Response, Router } from 'express';
 import { ensureAuthenticated } from '@middlewares/ensureAuthenticated';
 import { AuthenticateUserController } from '@controllers/AuthenticateUserController';
 import { CreateMessageController } from '@controllers/CreateMessageController';
+import { GetLast3MessagesController } from '@controllers/GetLast3MessagesController';
 
 const router = Router();
 
@@ -12,6 +13,8 @@ router.post(
   ensureAuthenticated,
   new CreateMessageController().handle
 );
+
+router.get('/messages/last3', new GetLast3MessagesController().handle);
 
 router.get('/github', (request: Request, response: Response) => {
   response.redirect(
