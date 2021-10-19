@@ -6,12 +6,12 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "@providers/*": ["providers/*"],
-      "@entities/*": ["entities/*"],
-      "@repositories/*": ["repositories/*"],
-      "@useCases/*": ["useCases/*"]
+      "@/*": ["src/*"],
+      "@controllers/*": ["src/controllers/*"],
+      "@services/*": ["src/services/*"],
+      "@middlewares/*": ["src/middlewares/*"]
     },
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
